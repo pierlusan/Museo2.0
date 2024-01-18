@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    
+      <ion-button  color="warning" Href="/guest-book" shape="round" slot="start">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    
+    <ion-title><font  face="Georgia, Times New Roman, Times, serif">Scrivi il tuo commento qui</font></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+    <form (submit)="onSubmit(); newFeedbForm.resetForm()" #newFeedbForm="ngForm">
+      <ion-input class="ion-margin-bottom" ngModel [(ngModel)]="form.nome" name="nome" label="Nome"
+        labelPlacement="floating" placeholder="Inserisci il tuo nome" fill="solid" required ins>
+      </ion-input>
+      <ion-input class="ion-margin-bottom" ngModel [(ngModel)]="form.cognome" name="cognome" label="Cognome"
+        labelPlacement="floating" placeholder="Inserisci il tuo nome" fill="solid" required ins>
+      </ion-input>
+      <ion-textarea class="ion-margin-bottom" ngModel [(ngModel)]="form.descrizione" name="mex" label="Messaggio"
+        labelPlacement="floating" placeholder="Inserisci il messaggio" fill="solid" style="height: 150px;" required>
+      </ion-textarea>
+
+      <ion-card-content id="buttons">
+       
+          <ion-icon slot="start" name="arrow-back"></ion-icon>
+          
+        
+        <ion-button routerLink="/opere" fill="clear" size="small" type="submit" color="danger"
+          [disabled]="!newFeedbForm.valid"><b>Aggiungi</b></ion-button>
+      </ion-card-content>
+    </form>
+  </ion-card-content>
+</ion-content>
+

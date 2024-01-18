@@ -1,0 +1,25 @@
+
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-button color="warning" Href="/ricerca" shape="round" slot="end">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-button>
+    <ion-title><font  face="Georgia, Times New Roman, Times, serif">Opere</font></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item color="warning" button *ngFor="let item of opere" [routerLink]="[item.id]">
+      <ion-avatar slot="start">
+        <img src="assets\icon\opera.png"/>
+      </ion-avatar>
+      <ion-label> <font  face="Georgia, Times New Roman, Times, serif">{{item.title}}</font>
+        <p>{{item.artist_title}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

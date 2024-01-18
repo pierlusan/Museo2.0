@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title><font  face="Georgia, Times New Roman, Times, serif">Autore</font></ion-title>
+
+    <ion-button routerLink="/opere/idOpera" color="warning" shape="round" slot="start">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary" >
+  <ion-card  color="secondary" *ngIf="autore">
+    <img src="assets\icon\immagine_mancante.png"
+    class="autore-img"
+    />
+    <ion-card-header >
+      
+      <ion-text color="dark"><b><font  face="Georgia, Times New Roman, Times, serif">Autore:</font></b></ion-text><br>
+      <ion-title color="dark"><b><font  face="Georgia, Times New Roman, Times, serif">{{autore.title}}</font></b></ion-title><br>
+
+      <ion-text color="dark">
+        <ion-text>Anche conosciuto/a come:</ion-text>
+      </ion-text><br>
+      <ion-text color="dark">
+        <span *ngIf="autore.alt_titles">
+          <span *ngFor="let a of autore.alt_titles ; let isLast = last">
+            {{a}}{{!isLast ? ', ' : ''}}
+          </span>
+        </span>
+      </ion-text>
+
+      <ion-text>
+        <span *ngIf="!autore.alt_titles">
+          <ion-text >Non ci sono nomi alternativi</ion-text>
+        </span>
+      </ion-text>
+    
+    </ion-card-header> 
+
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-icon name="calendar" slot="start"></ion-icon>
+          <ion-label>Nascita: <ion-text color="danger">{{autore.birth_date}}</ion-text></ion-label>
+          <ion-label>Morte: <ion-text color="danger">{{autore.death_date}}</ion-text></ion-label>
+        </ion-item>
+      </ion-card-content>
+      
+      
+      
+     
+  </ion-card>
+</ion-content>

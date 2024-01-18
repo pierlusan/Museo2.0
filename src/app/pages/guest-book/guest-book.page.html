@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-button color="warning" Href="/nuovo-commento" shape="round" slot="end">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="warning" shape="round" slot="start">
+      <ion-back-button defaultHref="/opere"></ion-back-button>
+    </ion-button>
+    
+    <ion-title><font  face="Georgia, Times New Roman, Times, serif">Guest Book</font></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ <ion-list *ngIf="commenti">
+  <ion-item *ngFor="let commento of commenti">
+    <ion-avatar slot="start">
+      <img src="assets\icon\commento.png" />
+    </ion-avatar>
+    <ion-label>
+      <p><b>Nome: </b> <ion-text color="danger">{{commento.nome}} </ion-text></p>
+      <p><b>Cognome:</b> <ion-text color="danger"> {{commento.cognome}} </ion-text></p>
+      <p><b>Descrizione:</b> {{commento.descrizione}}</p>
+    </ion-label>
+  </ion-item>
+ </ion-list>
+</ion-content>

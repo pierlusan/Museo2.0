@@ -1,0 +1,7 @@
+{
+  "name": "Museo2.0",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title><font  face="Georgia, Times New Roman, Times, serif">Opera</font></ion-title>
+    <ion-button color="warning" shape="round" slot="start">
+      <ion-back-button defaultHref="/opere"></ion-back-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+  <ion-card *ngIf="opera">
+    
+    <img [src]="imageBaseUrl + opera.image_id + '/full/843,/0/default.jpg'"
+    class="opera-img"/>
+
+
+    <ion-card-header color="secondary">
+      <ion-text color="dark"><font  face="Georgia, Times New Roman, Times, serif">Titolo Opera:</font></ion-text><br>
+      <ion-title color="dark"><font  face="Georgia, Times New Roman, Times, serif">{{opera.title}}{{opera.id}}</font></ion-title><br>
+      <ion-button shape="round" color="warning"  [routerLink]="['/autore', opera.artist_id]" [queryParams]="{ operaId: opera.id }">
+        <ion-icon name="brush-outline"></ion-icon>
+        <pre>  {{opera.artist_title}}</pre>
+      </ion-button><br>
+      <ion-text color="dark"><font  face="Georgia, Times New Roman, Times, serif">Parole chiave:</font></ion-text><br>
+      <ion-text color="danger">
+        <span *ngFor="let c of opera.classification_titles; let isLast = last">
+          {{c}}{{!isLast ? ', ' : ''}}
+        </span>
+      </ion-text>
+      <ion-card-content>
+        <p [innerHTML]="opera.description"> </p>
+      </ion-card-content>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-icon name="calendar" slot="start"></ion-icon>
+        <ion-label>{{opera.date_display}}</ion-label>
+      </ion-item>
+      
+    </ion-card-content>
+
+
+
+  </ion-card>
+</ion-content>

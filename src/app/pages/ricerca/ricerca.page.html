@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title><font  face="Georgia, Times New Roman, Times, serif">Ricerca</font></ion-title>
+    <ion-button color="warning" shape="round" slot="start">
+      <ion-back-button  slot="start" defaultHref="/opere"></ion-back-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar  placeholder="cerca" [debounce]="100" (ionInput)="handleInput($event)"></ion-searchbar>
+    <ion-list >
+        <ion-item  button *ngFor="let opera of opere" [href]="'http://localhost:8100/tabs/opere/'+ opera.id">
+          <ion-avatar slot="start">
+            <img src="assets\icon\opera.png" />
+          </ion-avatar>
+          <ion-label>
+            <font  face="Georgia, Times New Roman, Times, serif">{{opera.title}}</font>
+          </ion-label>
+        </ion-item>
+    </ion-list>
+
+  <ion-list>
+    <ion-item  button *ngFor="let autore of artisti" [href]="'http://localhost:8100/tabs/autore/'+ autore.id">
+      <ion-avatar slot="start">
+        <img src="assets\icon\immagine_mancante.png" />
+      </ion-avatar>
+      <ion-label>
+        <font  face="Georgia, Times New Roman, Times, serif">{{autore.title}}</font>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

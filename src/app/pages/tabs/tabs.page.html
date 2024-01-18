@@ -1,0 +1,16 @@
+<ion-tabs>
+  <ion-tab-bar  color="danger" slot="home">
+    <ion-tab-button tab="opere">
+      <ion-icon name="home"></ion-icon>
+      <ion-text>Home</ion-text>
+    </ion-tab-button>
+    <ion-tab-button tab="guest-book">
+      <ion-icon name="book"></ion-icon>
+      GuestBook
+    </ion-tab-button>
+    <ion-tab-button (click)="openScanner()" >
+      <ion-icon name="qr-code-outline"></ion-icon>
+      Scansiona QR
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
