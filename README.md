@@ -12,7 +12,7 @@ npm install -g @angular/cli
 
 1.Clona il repository:
 
-git clone https://github.com/cianf4/HNCentral.git
+git clone https://github.com/pierlusan/Museo2.0
 
 2. Vai nella directory del progetto:
    
@@ -26,7 +26,7 @@ npm install
    
 ionic serve
 
-Ora dovresti essere in grado di vedere l'applicazione in esecuzione all'indirizzo (http://localhost:8100/) nel tuo browser.
+Ora dovresti essere in grado di vedere l'applicazione in esecuzione all'indirizzo http://localhost:8100/ nel tuo browser.
 
 ## Costruire l'applicazione per Android
 
