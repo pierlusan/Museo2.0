@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
 import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
+ 
 
 @Component({
   selector: 'app-tabs',
@@ -56,7 +57,6 @@ export class TabsPage implements OnInit, OnDestroy {
 
   getLink(data: string){
     console.log(data);
-    
     return data;
     }
 

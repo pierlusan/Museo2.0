@@ -27,7 +27,7 @@ export class OperaService {
   }
 
   getByFilter(filter: string) {
-    return this.http.get<ApiResult>(`${environment.baseUrl}/artworks/search?query[term][title]=${filter}&query[term][artist_title]=${filter}&operator=OR`);
+    return this.http.get<ApiResult>(`${environment.baseUrl}/artworks/search?query[term][title]=${filter}`);
   }
 
 

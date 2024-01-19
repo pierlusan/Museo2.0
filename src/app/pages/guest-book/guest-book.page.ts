@@ -11,9 +11,9 @@ export class GuestBookPage implements OnInit {
   constructor(private guestbookService: GuestBookService) { }
 
   async ngOnInit() {
-    this.guestbookService.getComments().subscribe((res: any) => { 
-      this.commenti = res;
-    });
+    this.commenti = this.guestbookService.getComments();
+       
+    
     console.log(this.commenti);
   }
 
